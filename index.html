@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Secret ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            flex-direction: column;
+            text-align: center;
+        }
+        /* Hidden main content */
+        
+        #main {
+            display: none;
+        }
+        
+        img {
+            width: 220px;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* YES button */
+        
+        #yes {
+            background: #28a745;
+            color: white;
+        }
+        /* NO button */
+        
+        #no {
+            background: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PASSWORD SCREEN -->
+    <div id="login">
+        <h2>Enter Password 💌</h2>
+        <input type="password" id="pass">
+        <br><br>
+        <button onclick="checkPass()">Enter</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main">
+        <h2 id="nameText"></h2>
+        <img src="WhatsApp Image 2026-04-28 at 1.49.34 AM.jpeg">
+        <h3>Will you be mine? ❤️</h3>
+
+        <button id="yes" onclick="yesClicked()">YES 💖</button>
+        <button id="no">NO 😅</button>
+
+        <audio id="song">
+        <source src="WhatsApp Audio 2026-04-28 at 1.58.01 AM.mpeg" type="audio/mpeg">
+    </audio>
+    </div>
+
+    <script>
+        // 🔐 PASSWORD
+        const correctPassword = "2523"; // change this
+
+        function checkPass() {
+            let input = document.getElementById("pass").value;
+            if (input === correctPassword) {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("main").style.display = "block";
+            } else {
+                alert("Wrong password 😅");
+            }
+        }
+
+        // 💖 NAME PERSONALIZATION
+        const name = "Shona"; // change this
+        document.getElementById("nameText").innerText = "Hey " + name + " ❤️";
+
+        // 🎵 YES BUTTON
+        function yesClicked() {
+            document.getElementById("song").play();
+            alert("You just made me the happiest , I love you mera baccha ❤️");
+        }
+
+        // 😏 NO BUTTON RUNS AWAY
+        const noBtn = document.getElementById("no");
+
+        noBtn.addEventListener("mouseover", () => {
+            noBtn.style.top = Math.random() * window.innerHeight + "px";
+            noBtn.style.left = Math.random() * window.innerWidth + "px";
+        });
+    </script>
+
+</body>
+
+</html>
